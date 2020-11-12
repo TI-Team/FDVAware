@@ -1,0 +1,67 @@
+<%= form_with(model: client, local: true) do |form| %>
+  <% if client.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(client.errors.count, "error") %> prohibited this client from being saved:</h2>
+
+      <ul>
+        <% client.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :cpf/cnpj %>
+    <%= form.text_field :cpf/cnpj %>
+  </div>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :street %>
+    <%= form.text_field :street %>
+  </div>
+
+  <div class="field">
+    <%= form.label :number %>
+    <%= form.text_field :number %>
+  </div>
+
+  <div class="field">
+    <%= form.label :neighbourhood %>
+    <%= form.text_field :neighbourhood %>
+  </div>
+
+  <div class="field">
+    <%= form.label :city %>
+    <%= form.text_field :city %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :phone %>
+    <%= form.text_field :phone %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cep %>
+    <%= form.text_field :cep %>
+  </div>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.number_field :user_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

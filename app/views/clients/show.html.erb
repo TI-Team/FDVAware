@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Cpf/cnpj:</strong>
+  <%= @client.cpf/cnpj %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @client.name %>
+</p>
+
+<p>
+  <strong>Street:</strong>
+  <%= @client.street %>
+</p>
+
+<p>
+  <strong>Number:</strong>
+  <%= @client.number %>
+</p>
+
+<p>
+  <strong>Neighbourhood:</strong>
+  <%= @client.neighbourhood %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @client.city %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @client.email %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @client.phone %>
+</p>
+
+<p>
+  <strong>Cep:</strong>
+  <%= @client.cep %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @client.user_id %>
+</p>
+
+<%= link_to 'Edit', edit_client_path(@client) %> |
+<%= link_to 'Back', clients_path %>
