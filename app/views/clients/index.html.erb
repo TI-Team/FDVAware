@@ -5,7 +5,7 @@
 <table>
   <thead>
     <tr>
-      <th>Cpf/cnpj</th>
+      <th>Cpf_cnpj</th>
       <th>Name</th>
       <th>Street</th>
       <th>Number</th>
@@ -22,7 +22,7 @@
   <tbody>
     <% @clients.each do |client| %>
       <tr>
-        <td><%= client.cpf/cnpj %></td>
+        <td><%= client.cpf_cnpj %></td>
         <td><%= client.name %></td>
         <td><%= client.street %></td>
         <td><%= client.number %></td>
