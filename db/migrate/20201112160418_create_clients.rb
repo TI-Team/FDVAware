@@ -1,7 +1,7 @@
 class CreateClients < ActiveRecord::Migration[6.0]
   def change
     create_table :clients do |t|
-      t.string :cpf/cnpj
+      t.string :cpf_cnpj
       t.string :name
       t.string :street
       t.string :number
