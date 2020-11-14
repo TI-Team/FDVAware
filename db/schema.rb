@@ -10,10 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_12_144641) do
+ActiveRecord::Schema.define(version: 2020_11_14_143437) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "clients", force: :cascade do |t|
+    t.string "cpf_cnpj"
+    t.string "name"
+    t.string "street"
+    t.string "number"
+    t.string "neighbourhood"
+    t.string "city"
+    t.string "email"
+    t.string "phone"
+    t.string "cep"
+    t.integer "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "departments", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
@@ -26,6 +41,8 @@ ActiveRecord::Schema.define(version: 2020_11_12_144641) do
     t.decimal "value"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.decimal "range_max"
+    t.decimal "range_min"
   end
 
   create_table "items", force: :cascade do |t|
