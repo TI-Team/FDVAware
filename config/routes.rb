@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
-  resources :clients
-  resources :departments
+
+  root to: "dashboard#index"
+  
   devise_for :users, controllers: {
     sessions: 'users/sessions'
   }
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
+  resources :clients
+  resources :departments
+
 end
