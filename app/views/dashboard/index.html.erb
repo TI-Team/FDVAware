@@ -1,0 +1,7 @@
+<strong>
+  <%= label_tag "Olá, #{current_user.name}" %>
+</strong>
+
+<li>
+  <%= link_to('Logout', destroy_user_session_path, method: :delete) %>   
+</li>
