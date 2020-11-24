@@ -19,11 +19,25 @@
   <%= nav_bar brand: "Inicio", brand_link: root_path do %>
     <%= menu_group do %>
       <%= menu_item "Clientes", clients_path %>
-      <%= menu_item "Pedido", root_path %>
+      <%= menu_item "Pedidos", root_path %>
     <% end %>
+
+    <%= form_tag destroy_user_session_path, method: :delete, class:"navbar-form navbar-right" do %>
+      <div class="form-group">
+        <%= button_to 'Logout', destroy_user_session_path, method: :delete, class:"btn btn-danger"  %>
+      </div>
+    <% end %>
+
+    <%= form_tag busca_client_path, method: :get, class:"navbar-form navbar-right" do %>
+      <div class="form-group">
+        <%= text_field_tag :name, @name, class:"form-control" %>
+        <%= button_to "Buscar", nil, class:"btn btn-default" %>
+      </div>
+    <% end %>
+
+
   <% end %>
-  <div class="container">
+
     <%= yield %>
-  </div>
   </body>
 </html>

@@ -2,5 +2,5 @@
 
 <%= render 'form', client: @client %>
 
-<%= link_to 'Show', @client %> |
-<%= link_to 'Back', clients_path %>
+<%#= link_to 'Show', @client %> |
+<%= button_to 'Back', clients_path, class:"btn btn-primary", :method => :get %>

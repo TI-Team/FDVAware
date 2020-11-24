@@ -72,4 +72,9 @@ class ClientsController < ApplicationController
     def client_params
       params.require(:client).permit(:cpf_cnpj, :name, :street, :number, :neighbourhood, :city, :email, :phone, :cep, :user_id)
     end
+
+    def busca
+      @name = params[:nome]
+      @clients = Client.where "name like ?", "#{name}"
+    end
 end
