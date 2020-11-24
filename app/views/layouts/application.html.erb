@@ -16,6 +16,14 @@
   <% if alert %>
     <p class="alert alert-danger"><%= alert %></p>
   <% end %> 
+  <%= nav_bar brand: "Inicio", brand_link: root_path do %>
+    <%= menu_group do %>
+      <%= menu_item "Clientes", clients_path %>
+      <%= menu_item "Pedido", root_path %>
+    <% end %>
+  <% end %>
+  <div class="container">
     <%= yield %>
+  </div>
   </body>
 </html>
