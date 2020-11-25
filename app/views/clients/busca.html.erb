@@ -1,3 +1,14 @@
+<div>
+  <h1>Clientes</h1>
+  <%= form_tag busca_client_path, method: :get, class:"navbar-form navbar-right" do %>
+    <div class="form-group">
+      <%= text_field_tag :name, @name, class:"form-control" %>
+      <%= button_to "Buscar", nil, class:"btn btn-default" %>
+    </div>
+  <% end %>
+</div>
+<%= button_to 'Novo Consultor(a)', new_client_path, class:"btn btn-primary", :method => :get %>
+
 <table class="table table-bordered table-hover">
   <thead>
     <tr>
@@ -28,8 +39,8 @@
         <td><%= client.phone %></td>
         <td><%= client.cep %></td>
         <td><%= client.user_id %></td>
-        <td><%= button_to 'Show', client, class:"btn btn-primary", :method => :get %></td>
-        <td><%= button_to 'Edit', edit_client_path(client), class:"btn btn-danger", :method => :get %></td>
+        <td><%= button_to 'Exibir', client, class:"btn btn-primary", :method => :get %></td>
+        <td><%= button_to 'Editar', edit_client_path(client), class:"btn btn-danger", :method => :get %></td>
         <!--td><%= link_to 'Destroy', client, method: :delete, data: { confirm: 'Are you sure?' } %></td-->
       </tr>
     <% end %>

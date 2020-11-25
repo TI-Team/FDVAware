@@ -5,11 +5,13 @@ class ClientsController < ApplicationController
   # GET /clients.json
   def index
     @clients = Client.all
+    @users = User.all
   end
 
   # GET /clients/1
   # GET /clients/1.json
   def show
+    @users = User.all
   end
 
   # GET /clients/new
@@ -20,6 +22,7 @@ class ClientsController < ApplicationController
 
   # GET /clients/1/edit
   def edit
+    @users = User.all
   end
 
   # POST /clients
@@ -62,6 +65,11 @@ class ClientsController < ApplicationController
     end
   end
 
+  def busca
+    @name = params[:name]
+    @clients = Client.where "name ilike ?", "%#{@name}%"
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_client
@@ -71,10 +79,5 @@ class ClientsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def client_params
       params.require(:client).permit(:cpf_cnpj, :name, :street, :number, :neighbourhood, :city, :email, :phone, :cep, :user_id)
-    end
-
-    def busca
-      @name = params[:nome]
-      @clients = Client.where "name like ?", "#{name}"
     end
 end
