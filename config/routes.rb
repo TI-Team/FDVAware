@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   
-  get "clients/busca", to: "clients#busca", as: :busca_client
+  get "clients/search", to: "clients#search", as: :search_client
 
   root to: "dashboard#index"
   

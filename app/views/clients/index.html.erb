@@ -2,7 +2,7 @@
 
 <div>
   <h1>Clientes</h1>
-  <%= form_tag busca_client_path, method: :get, class:"navbar-form navbar-right" do %>
+  <%= form_tag search_client_path, method: :get, class:"navbar-form navbar-right" do %>
     <div class="form-group">
       <%= text_field_tag :name, @name, class:"form-control" %>
       <%= button_to "Buscar", nil, class:"btn btn-default" %>
