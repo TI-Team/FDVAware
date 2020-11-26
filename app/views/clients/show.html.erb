@@ -1,54 +1,39 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Cpf/cnpj:</strong>
-  <%= @client.cpf_cnpj %>
-</p>
+  <table class="table table-bordered table-hover">
+  <thead>
+  <tr>
 
-<p>
-  <strong>Name:</strong>
-  <%= @client.name %>
-</p>
+<th><strong>CPF/CNPJ:</strong></th>
+<th><strong>Nome:</strong></th>
+<th><strong>Rua:</strong></th>
+<th><strong>Numero:</strong></th>
+<th><strong>Bairro:</strong></th>
+<th><strong>Cidade:</strong></th>
+<th><strong>Email:</strong></th>
+<th><strong>Telefone:</strong></th>
+<th><strong>CEP:</strong></th>
+<th><strong>Supervisor:</strong></th>
+  </tr>
+  </thead>
 
-<p>
-  <strong>Street:</strong>
-  <%= @client.street %>
-</p>
+  <tbody>
+  <tr>
 
-<p>
-  <strong>Number:</strong>
-  <%= @client.number %>
-</p>
+<td><%= @client.cpf_cnpj %></td>
+<td><%= @client.name %></td>
+<td><%= @client.street %></td>  
+<td><%= @client.number %></td>  
+<td><%= @client.neighbourhood %></td>
+<td><%= @client.city %></td>  
+<td><%= @client.email %></td>
+<td><%= @client.phone %></td>
+<td><%= @client.cep %></td>
+<td><%= @client.user.name %></td>
+  </tr>
+  </tbody>
+  </table>
 
-<p>
-  <strong>Neighbourhood:</strong>
-  <%= @client.neighbourhood %>
-</p>
+<%= button_to 'Editar', edit_client_path(@client),class:"btn btn-primary", :method => :get %> 
 
-<p>
-  <strong>City:</strong>
-  <%= @client.city %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @client.email %>
-</p>
-
-<p>
-  <strong>Phone:</strong>
-  <%= @client.phone %>
-</p>
-
-<p>
-  <strong>Cep:</strong>
-  <%= @client.cep %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @client.user_id %>
-</p>
-
-<%= link_to 'Editar', edit_client_path(@client) %> |
-<%= link_to 'Voltar', clients_path %>
+<%= button_to 'Voltar', clients_path, class:"btn btn-danger", :method => :get %>

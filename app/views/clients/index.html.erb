@@ -40,7 +40,7 @@
         <td><%= client.email %></td>
         <td><%= client.phone %></td>
         <td><%= client.cep %></td>
-        <td><%= client.user_id %></td>
+        <td><%= client.user.name %></td>
         <td><%= button_to 'Exibir', client, class:"btn btn-primary", :method => :get %></td>
         <td><%= button_to 'Editar', edit_client_path(client), class:"btn btn-danger", :method => :get %></td>
         <!--td><%= link_to 'Destroy', client, method: :delete, data: { confirm: 'Are you sure?' } %></td-->
