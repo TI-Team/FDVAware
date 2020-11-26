@@ -23,11 +23,13 @@ class ClientsController < ApplicationController
   # GET /clients/1/edit
   def edit
     @users = User.all
+    @clients = Client.all
   end
 
   # POST /clients
   # POST /clients.json
   def create
+    @users = User.all
     @client = Client.new(client_params)
 
     respond_to do |format|
@@ -44,6 +46,7 @@ class ClientsController < ApplicationController
   # PATCH/PUT /clients/1
   # PATCH/PUT /clients/1.json
   def update
+    @users = User.all
     respond_to do |format|
       if @client.update(client_params)
         format.html { redirect_to @client, notice: 'Client was successfully updated.' }

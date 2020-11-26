@@ -1,10 +1,10 @@
 <%= form_with(model: @client, local: true) do |form| %>
   <% if @client.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(client.errors.count, "error") %> prohibited this client from being saved:</h2>
+      <h2><%= pluralize( @client.errors.count, "error" ) %> prohibited this client from being saved:</h2>
 
       <ul>
-        <% client.errors.full_messages.each do |message| %>
+        <% @client.errors.full_messages.each do |message| %>
           <li><%= message %></li>
         <% end %>
       </ul>
@@ -78,7 +78,7 @@
   <div class="col-sm-3">
     <div class="form-group">
       <%= form.label "Telefone" %>
-      <%= form.text_field :phone, class:"form-control" %>
+      <%= form.telephone_field :phone, class:"form-control" %>
     </div>
   </div>
 </div>
