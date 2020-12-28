@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.6.3'
+ruby '2.7.1'
 
 gem 'validates_cpf_cnpj'
 gem 'rails-i18n', '~> 6.0.0'
